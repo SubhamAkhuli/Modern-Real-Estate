@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 export default function App() {
   return (
-    <div >
-      <h1 className="text-4xl font-bold text-red-500 text-center mt-10">Hello Tailwind CSS</h1>
+    <div>
+      <Router>
+        <Switch>
+          <Route path="/" exact>
+            <h1>Home</h1>
+          </Route>
+          
+          <Route path="/about">
+            <h1>About</h1>
+          </Route>
+          <Route path="/contact">
+            <h1>Contact</h1>
+          </Route>
+        </Switch>
+      </Router>
     </div>
-  )
+  );
 }
