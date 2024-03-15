@@ -1,23 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter , Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Signup from "./pages/Signup";
+import Login from "./pages/Signin";
+import About from "./pages/About";
+import Profile from "./pages/Profile";
 
 export default function App() {
   return (
     <div>
-      <Router>
-        <Switch>
-          <Route path="/" exact>
-            <h1>Home</h1>
-          </Route>
-          
-          <Route path="/about">
-            <h1>About</h1>
-          </Route>
-          <Route path="/contact">
-            <h1>Contact</h1>
-          </Route>
-        </Switch>
-      </Router>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
